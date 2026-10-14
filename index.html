@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>MUDIR CUP 2026 - Turnamen Mini Soccer SD/MI Sederajat</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -33,29 +33,39 @@
     <style>
         body {
             font-family: 'Montserrat', sans-serif;
-            background: linear-gradient(180deg, #8EBDE3 0%, #BFE0F7 40%, #EBF493 80%, #D8EA56 100%);
+            background: linear-gradient(180deg, #7BB3E0 0%, #A3CEF1 35%, #DDE86A 75%, #C2D838 100%);
             background-attachment: fixed;
             color: #0B203E;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
         }
         .font-sport {
             font-family: 'Outfit', sans-serif;
         }
         .text-poster-headline {
             color: #133563;
-            -webkit-text-stroke: 2px #ffffff;
-            text-shadow: 4px 4px 0px #ffffff, 6px 6px 12px rgba(0, 0, 0, 0.2);
+            -webkit-text-stroke: 1.5px #ffffff;
+            text-shadow: 2px 2px 0px #ffffff, 4px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        @media (min-width: 640px) {
+            .text-poster-headline {
+                -webkit-text-stroke: 2px #ffffff;
+                text-shadow: 4px 4px 0px #ffffff, 6px 6px 12px rgba(0, 0, 0, 0.2);
+            }
         }
         .text-poster-title {
             color: #133563;
-            -webkit-text-stroke: 1.5px #ffffff;
+            -webkit-text-stroke: 1px #ffffff;
             text-shadow: 2px 2px 0px rgba(255, 255, 255, 0.9);
         }
         .halftone-bg {
-            background-image: radial-gradient(rgba(255, 255, 255, 0.35) 2px, transparent 2px);
-            background-size: 22px 22px;
+            background-image: radial-gradient(rgba(19, 53, 99, 0.12) 2px, transparent 2px);
+            background-size: 20px 20px;
         }
         ::-webkit-scrollbar {
-            width: 10px;
+            width: 8px;
+            height: 6px;
         }
         ::-webkit-scrollbar-track {
             background: #8EBDE3;
@@ -67,33 +77,45 @@
         ::-webkit-scrollbar-thumb:hover {
             background: #0B203E;
         }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
     </style>
 </head>
 <body class="min-h-screen flex flex-col antialiased halftone-bg selection:bg-navyblue selection:text-white">
 
-    <!-- Header / Navbar Mudir Cup Theme -->
-    <header class="sticky top-0 z-40 bg-[#133563]/95 backdrop-blur-md border-b-4 border-white shadow-xl">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-wrap items-center justify-between gap-4">
+    <!-- Header / Navbar Mudir Cup Theme (Dioptimalkan untuk Android/iOS) -->
+    <header class="sticky top-0 z-40 bg-[#133563] border-b-4 border-white shadow-xl">
+        <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-2.5 flex flex-col sm:flex-row items-center justify-between gap-3">
             
-            <div class="flex items-center space-x-3">
-                <div class="flex items-center space-x-2 bg-white/10 p-1.5 rounded-2xl border border-white/20">
-                    <img src="ALFALAH.png" onerror="this.onerror=null; this.src='https://placehold.co/100x100/133563/ffffff?text=ALFALAH';" alt="Ponpes Al Falah" class="h-10 w-auto object-contain bg-white rounded-xl p-1" title="Pondok Pesantren Al Falah">
-                    <img src="ikppf.png" onerror="this.onerror=null; this.src='https://placehold.co/100x100/133563/ffffff?text=IKPPF';" alt="IKPPF" class="h-10 w-auto object-contain bg-white rounded-xl p-1" title="IKPPF">
-                    <img src="FFA.png" onerror="this.onerror=null; this.src='https://placehold.co/100x100/133563/ffffff?text=BHASMA';" alt="Bhasma 47" class="h-10 w-auto object-contain bg-white rounded-xl p-1" title="Bhasma 47">
-                    <img src="logo-harisantri.png" onerror="this.onerror=null; this.src='https://placehold.co/100x100/133563/ffffff?text=HARI+SANTRI';" alt="Hari Santri 2026" class="h-10 w-auto object-contain bg-white rounded-xl p-1" title="Hari Santri 2026">
+            <div class="flex items-center justify-between w-full sm:w-auto gap-2">
+                <!-- Row Logo Penyelenggara dengan Auto Scroll Mobile -->
+                <div class="flex items-center space-x-2 bg-white/10 p-1.5 rounded-2xl border border-white/20 overflow-x-auto no-scrollbar max-w-[70vw] sm:max-w-none">
+                    <img src="ALFALAH.png" onerror="this.onerror=null; this.src='https://placehold.co/100x100/133563/ffffff?text=ALFALAH';" alt="Ponpes Al Falah" class="h-8 sm:h-10 w-auto object-contain bg-white rounded-xl p-1 shrink-0" title="Pondok Pesantren Al Falah">
+                    <img src="ikppf.png" onerror="this.onerror=null; this.src='https://placehold.co/100x100/133563/ffffff?text=IKPPF';" alt="IKPPF" class="h-8 sm:h-10 w-auto object-contain bg-white rounded-xl p-1 shrink-0" title="IKPPF">
+                    <img src="FFA.png" onerror="this.onerror=null; this.src='https://placehold.co/100x100/133563/ffffff?text=BHASMA';" alt="Bhasma 47" class="h-8 sm:h-10 w-auto object-contain bg-white rounded-xl p-1 shrink-0" title="Bhasma 47">
+                    <img src="logo-harisantri.png" onerror="this.onerror=null; this.src='https://placehold.co/100x100/133563/ffffff?text=HARI+SANTRI';" alt="Hari Santri 2026" class="h-8 sm:h-10 w-auto object-contain bg-white rounded-xl p-1 shrink-0" title="Hari Santri 2026">
                 </div>
 
-                <div>
-                    <div class="flex items-center space-x-2">
-                        <span class="font-sport text-lg sm:text-xl tracking-wider text-white font-black">MUDIR CUP 2026</span>
-                        <span class="text-[10px] font-black bg-[#DDE86A] text-[#133563] px-2 py-0.5 rounded-full uppercase">SD/MI</span>
+                <div class="hidden xs:block text-right sm:text-left shrink-0">
+                    <div class="flex items-center space-x-1.5 justify-end sm:justify-start">
+                        <span class="font-sport text-base sm:text-xl tracking-wider text-white font-black">MUDIR CUP 2026</span>
+                        <span class="text-[9px] font-black bg-[#DDE86A] text-[#133563] px-1.5 py-0.5 rounded-full uppercase">SD/MI</span>
                     </div>
-                    <p class="text-xs text-sky-200 font-medium hidden sm:block">Pondok Pesantren Al Falah Banjarbaru</p>
+                    <p class="text-[10px] sm:text-xs text-sky-200 font-medium hidden sm:block">Pondok Pesantren Al Falah Banjarbaru</p>
                 </div>
             </div>
 
-            <div class="flex items-center space-x-2">
-                <div class="flex items-center space-x-2 bg-white/15 border-2 border-white/40 text-white px-3.5 py-1.5 rounded-2xl text-xs font-bold shadow-sm">
+            <div class="flex items-center justify-between sm:justify-end w-full sm:w-auto">
+                <div class="block sm:hidden">
+                    <span class="font-sport text-base tracking-wider text-white font-black">MUDIR CUP 2026</span>
+                    <span class="text-[9px] font-black bg-[#DDE86A] text-[#133563] px-1.5 py-0.5 rounded-full uppercase">SD/MI</span>
+                </div>
+                <div class="flex items-center space-x-2 bg-white/20 border-2 border-white/40 text-white px-3 py-1 rounded-xl text-xs font-bold shadow-sm">
                     <i class="fa-solid fa-trophy text-[#DDE86A]"></i>
                     <span>Galeri & Link Drive</span>
                 </div>
@@ -101,142 +123,142 @@
         </div>
     </header>
 
-    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
+    <main class="flex-grow max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-5 sm:py-8 w-full">
         
-        <!-- Hero Section -->
-        <div class="bg-gradient-to-b from-[#A5CCE9]/80 to-[#D0E6F7]/95 p-6 sm:p-10 rounded-3xl border-4 border-white shadow-2xl relative overflow-hidden mb-8 text-center">
+        <!-- Hero Section (Warna Latar Belakang Solid Tidak Transparan & Bergradasi) -->
+        <div class="bg-gradient-to-br from-[#B5D8F0] via-[#D5ECFA] to-[#EDF6A0] p-5 sm:p-10 rounded-3xl border-4 border-white shadow-2xl relative overflow-hidden mb-6 text-center">
             
             <div class="mb-2 space-y-1">
-                <h2 class="font-sport font-black text-xl sm:text-3xl tracking-wide text-poster-title uppercase">
+                <h2 class="font-sport font-black text-lg sm:text-3xl tracking-wide text-poster-title uppercase leading-tight">
                     TURNAMEN MINI SOCCER MUDIR CUP 2026
                 </h2>
-                <p class="font-black text-sm sm:text-lg text-poster-title uppercase">
+                <p class="font-black text-xs sm:text-lg text-poster-title uppercase">
                     TINGKAT SD/MI SEDERAJAT
                 </p>
-                <p class="font-bold text-xs sm:text-sm text-[#133563] uppercase tracking-wider">
+                <p class="font-bold text-[10px] sm:text-sm text-[#133563] uppercase tracking-wider">
                     PONDOK PESANTREN AL FALAH BANJARBARU
                 </p>
             </div>
 
-            <h1 class="font-sport text-4xl sm:text-7xl font-black text-poster-headline tracking-tight uppercase my-4 transform -rotate-1">
+            <h1 class="font-sport text-3xl sm:text-7xl font-black text-poster-headline tracking-tight uppercase my-3 sm:my-4 transform -rotate-1">
                 SELAMAT BERTANDING! ⚽🏆
             </h1>
 
-            <p class="text-[#133563] text-xs sm:text-sm max-w-2xl mx-auto font-bold mt-2">
+            <p class="text-[#133563] text-xs sm:text-sm max-w-2xl mx-auto font-extrabold mt-2 leading-relaxed">
                 Dokumentasi foto, momen berharga, serta berkas kegiatan Mudir Cup 2026. Tersedia 55 kolom arsip dan folder Google Drive lengkap!
             </p>
 
-            <div class="max-w-md mx-auto mt-6 relative z-10">
+            <div class="max-w-md mx-auto mt-5 relative z-10">
                 <div class="relative">
-                    <span class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-[#133563] text-lg">
+                    <span class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-[#133563] text-base sm:text-lg">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </span>
                     <input type="text" id="search-input" oninput="handleSearch()" placeholder="Cari tim, pertandingan, atau foto (dari 55 kolom)..." 
-                           class="w-full pl-11 pr-4 py-3.5 bg-white border-3 border-[#133563] rounded-2xl text-sm text-[#133563] placeholder-[#133563]/50 font-bold focus:outline-none focus:ring-4 focus:ring-[#DDE86A] transition-all shadow-lg">
+                           class="w-full pl-10 pr-4 py-3 bg-white border-3 border-[#133563] rounded-2xl text-xs sm:text-sm text-[#133563] placeholder-[#133563]/60 font-bold focus:outline-none focus:ring-4 focus:ring-[#DDE86A] transition-all shadow-lg">
                 </div>
             </div>
         </div>
 
-        <!-- Section Deretan Logo Tim Peserta Lomba -->
-        <div class="bg-white/80 border-4 border-white rounded-3xl p-5 mb-8 shadow-xl">
+        <!-- Section Deretan 40 Logo Tim Peserta Lomba -->
+        <div class="bg-white border-4 border-white rounded-3xl p-4 sm:p-5 mb-6 shadow-xl">
             <div class="text-center mb-3">
-                <span class="font-sport text-xs font-black bg-[#133563] text-[#DDE86A] px-4 py-1.5 rounded-full uppercase tracking-wider inline-block border-2 border-white shadow-md">
-                    <i class="fa-solid fa-shield-halved mr-1"></i> 38 Tim & Sekolah Peserta
+                <span class="font-sport text-xs sm:text-sm font-black bg-[#133563] text-[#DDE86A] px-4 py-1.5 rounded-full uppercase tracking-wider inline-block border-2 border-white shadow-md">
+                    <i class="fa-solid fa-shield-halved mr-1.5"></i> 40 Tim & Sekolah Peserta
                 </span>
             </div>
-            <div id="participant-logos" class="flex flex-wrap items-center justify-center gap-2.5 py-2"></div>
+            <div id="participant-logos" class="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5 py-2"></div>
         </div>
 
         <!-- Filter Buttons -->
-        <div class="flex items-center justify-between flex-wrap gap-4 mb-8 pb-4 border-b-4 border-white/60">
-            <div class="flex flex-wrap items-center gap-2.5" id="filter-container">
-                <button onclick="filterCategory('Semua')" class="filter-btn active px-4 py-2.5 rounded-2xl text-xs font-black transition-all bg-[#133563] text-white border-2 border-white shadow-md hover:scale-105 flex items-center space-x-1.5">
-                    <i class="fa-solid fa-layer-group text-[#DDE86A]"></i> <span>Semua Foto (55 Kolom)</span>
+        <div class="flex items-center justify-between flex-wrap gap-3 mb-6 pb-4 border-b-4 border-white/80">
+            <div class="flex flex-wrap items-center gap-2" id="filter-container">
+                <button onclick="filterCategory('Semua')" class="filter-btn active px-3.5 py-2 rounded-xl text-xs font-black transition-all bg-[#133563] text-white border-2 border-white shadow-md flex items-center space-x-1.5">
+                    <i class="fa-solid fa-layer-group text-[#DDE86A]"></i> <span>Semua (55)</span>
                 </button>
-                <button onclick="filterCategory('Tilawati')" class="filter-btn px-4 py-2.5 rounded-2xl text-xs font-black transition-all bg-white text-[#133563] border-2 border-[#133563] shadow-sm hover:scale-105 flex items-center space-x-1.5">
+                <button onclick="filterCategory('Tilawati')" class="filter-btn px-3.5 py-2 rounded-xl text-xs font-black transition-all bg-white text-[#133563] border-2 border-[#133563] shadow-sm flex items-center space-x-1.5">
                     <i class="fa-solid fa-book-quran text-[#133563]"></i> <span>Tilawati</span>
                 </button>
-                <button onclick="filterCategory('17 agustusan')" class="filter-btn px-4 py-2.5 rounded-2xl text-xs font-black transition-all bg-white text-[#133563] border-2 border-[#133563] shadow-sm hover:scale-105 flex items-center space-x-1.5">
+                <button onclick="filterCategory('17 agustusan')" class="filter-btn px-3.5 py-2 rounded-xl text-xs font-black transition-all bg-white text-[#133563] border-2 border-[#133563] shadow-sm flex items-center space-x-1.5">
                     <i class="fa-solid fa-flag text-red-500"></i> <span>17 Agustusan</span>
                 </button>
-                <button onclick="filterCategory('Pelantikan')" class="filter-btn px-4 py-2.5 rounded-2xl text-xs font-black transition-all bg-white text-[#133563] border-2 border-[#133563] shadow-sm hover:scale-105 flex items-center space-x-1.5">
+                <button onclick="filterCategory('Pelantikan')" class="filter-btn px-3.5 py-2 rounded-xl text-xs font-black transition-all bg-white text-[#133563] border-2 border-[#133563] shadow-sm flex items-center space-x-1.5">
                     <i class="fa-solid fa-award text-purple-600"></i> <span>Pelantikan</span>
                 </button>
-                <button onclick="filterCategory('Sparing')" class="filter-btn px-4 py-2.5 rounded-2xl text-xs font-black transition-all bg-white text-[#133563] border-2 border-[#133563] shadow-sm hover:scale-105 flex items-center space-x-1.5">
+                <button onclick="filterCategory('Sparing')" class="filter-btn px-3.5 py-2 rounded-xl text-xs font-black transition-all bg-white text-[#133563] border-2 border-[#133563] shadow-sm flex items-center space-x-1.5">
                     <i class="fa-solid fa-futbol text-emerald-600"></i> <span>Sparing / Match</span>
                 </button>
-                <button onclick="filterCategory('Random')" class="filter-btn px-4 py-2.5 rounded-2xl text-xs font-black transition-all bg-white text-[#133563] border-2 border-[#133563] shadow-sm hover:scale-105 flex items-center space-x-1.5">
+                <button onclick="filterCategory('Random')" class="filter-btn px-3.5 py-2 rounded-xl text-xs font-black transition-all bg-white text-[#133563] border-2 border-[#133563] shadow-sm flex items-center space-x-1.5">
                     <i class="fa-solid fa-images text-blue-600"></i> <span>Random Momen</span>
                 </button>
             </div>
 
-            <div class="text-xs font-extrabold text-[#133563] bg-white px-4 py-2.5 rounded-2xl border-2 border-[#133563] shadow-sm">
+            <div class="text-xs font-extrabold text-[#133563] bg-white px-3.5 py-2 rounded-xl border-2 border-[#133563] shadow-sm">
                 ⚽ Total <span id="item-count" class="text-blue-700 font-black text-sm">0</span> Dokumentasi
             </div>
         </div>
 
         <!-- Gallery Grid -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="gallery-grid"></div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6" id="gallery-grid"></div>
 
         <!-- Empty State -->
-        <div id="empty-state" class="hidden text-center py-16 bg-white/90 rounded-3xl border-4 border-dashed border-[#133563] shadow-xl my-6">
-            <div class="w-20 h-20 rounded-full bg-[#133563] text-[#DDE86A] flex items-center justify-center mx-auto text-3xl mb-4 animate-bounce">
+        <div id="empty-state" class="hidden text-center py-12 bg-white rounded-3xl border-4 border-dashed border-[#133563] shadow-xl my-6 px-4">
+            <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#133563] text-[#DDE86A] flex items-center justify-center mx-auto text-2xl sm:text-3xl mb-3 animate-bounce">
                 <i class="fa-solid fa-futbol"></i>
             </div>
-            <h3 class="font-sport text-2xl font-black text-[#133563] mb-1">Momen Tidak Ditemukan!</h3>
-            <p class="text-xs text-[#133563]/70 font-semibold">Coba cari kata kunci lain yang sesuai dengan arsip.</p>
+            <h3 class="font-sport text-xl sm:text-2xl font-black text-[#133563] mb-1">Momen Tidak Ditemukan!</h3>
+            <p class="text-xs text-[#133563]/80 font-semibold">Coba cari kata kunci lain yang sesuai dengan arsip.</p>
         </div>
 
         <!-- Section Sponsor Lomba -->
-        <div class="mt-12 bg-white/90 border-4 border-[#133563] rounded-3xl p-6 text-center shadow-xl">
-            <h3 class="font-sport text-lg font-black text-[#133563] mb-4 uppercase tracking-wider">
+        <div class="mt-8 sm:mt-12 bg-white border-4 border-[#133563] rounded-3xl p-5 text-center shadow-xl">
+            <h3 class="font-sport text-base sm:text-lg font-black text-[#133563] mb-3 uppercase tracking-wider">
                 Sponsored By:
             </h3>
-            <div id="sponsor-logos" class="flex flex-wrap items-center justify-center gap-6 sm:gap-10"></div>
+            <div id="sponsor-logos" class="flex flex-wrap items-center justify-center gap-4 sm:gap-8"></div>
         </div>
 
     </main>
 
     <!-- Lightbox Modal -->
-    <div id="lightbox" class="fixed inset-0 z-50 bg-[#0B203E]/80 backdrop-blur-md hidden flex items-center justify-center p-4">
-        <div class="relative max-w-4xl w-full bg-white rounded-3xl overflow-hidden shadow-2xl border-4 border-[#133563] flex flex-col md:flex-row max-h-[90vh]">
-            <button onclick="closeLightbox()" class="absolute top-4 right-4 z-20 w-10 h-10 rounded-full bg-[#133563] text-white flex items-center justify-center hover:bg-red-600 hover:rotate-90 transition-all shadow-lg text-lg">
+    <div id="lightbox" class="fixed inset-0 z-50 bg-[#0B203E]/85 backdrop-blur-md hidden flex items-center justify-center p-3 sm:p-4">
+        <div class="relative max-w-4xl w-full bg-white rounded-3xl overflow-hidden shadow-2xl border-4 border-[#133563] flex flex-col md:flex-row max-h-[92vh]">
+            <button onclick="closeLightbox()" class="absolute top-3 right-3 z-20 w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#133563] text-white flex items-center justify-center hover:bg-red-600 transition-all shadow-lg text-base">
                 <i class="fa-solid fa-xmark"></i>
             </button>
 
-            <div class="md:w-3/5 bg-[#0B203E] flex items-center justify-center relative min-h-[300px] md:min-h-[450px] p-4">
-                <img id="lightbox-image" src="" alt="Preview" class="max-h-[75vh] object-contain rounded-2xl shadow-2xl">
-                <div id="lightbox-pdf-icon" class="hidden flex-col items-center justify-center text-center p-8">
-                    <div class="w-24 h-24 rounded-3xl bg-[#DDE86A] text-[#133563] border-4 border-white flex items-center justify-center text-4xl mb-4 shadow-xl">
+            <div class="md:w-3/5 bg-[#0B203E] flex items-center justify-center relative min-h-[220px] md:min-h-[450px] p-3">
+                <img id="lightbox-image" src="" alt="Preview" class="max-h-[50vh] md:max-h-[75vh] object-contain rounded-xl shadow-2xl">
+                <div id="lightbox-pdf-icon" class="hidden flex-col items-center justify-center text-center p-6">
+                    <div class="w-20 h-20 rounded-2xl bg-[#DDE86A] text-[#133563] border-4 border-white flex items-center justify-center text-3xl mb-3 shadow-xl">
                         <i class="fa-solid fa-folder-open"></i>
                     </div>
-                    <span class="font-sport text-lg font-black text-white">Folder Google Drive</span>
+                    <span class="font-sport text-base font-black text-white">Folder Google Drive</span>
                 </div>
             </div>
 
-            <div class="md:w-2/5 p-6 sm:p-8 flex flex-col justify-between bg-white">
+            <div class="md:w-2/5 p-5 sm:p-7 flex flex-col justify-between bg-white overflow-y-auto">
                 <div>
-                    <div class="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-[#133563] text-[#DDE86A] text-xs font-black uppercase tracking-wider mb-3 shadow-sm" id="lightbox-category">
+                    <div class="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-[#133563] text-[#DDE86A] text-[10px] sm:text-xs font-black uppercase tracking-wider mb-2.5 shadow-sm" id="lightbox-category">
                         <i class="fa-solid fa-tag"></i> <span id="lightbox-cat-text">Kategori</span>
                     </div>
-                    <h3 id="lightbox-title" class="font-sport text-2xl font-black text-[#133563] mb-2 leading-tight">Judul Foto</h3>
-                    <p id="lightbox-desc" class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-6 font-semibold">Deskripsi singkat dokumentasi.</p>
+                    <h3 id="lightbox-title" class="font-sport text-xl sm:text-2xl font-black text-[#133563] mb-2 leading-tight">Judul Foto</h3>
+                    <p id="lightbox-desc" class="text-xs sm:text-sm text-slate-700 leading-relaxed mb-4 font-medium">Deskripsi singkat dokumentasi.</p>
                 </div>
 
-                <div class="space-y-4 pt-4 border-t-2 border-slate-200">
-                    <div class="flex items-center justify-between text-xs font-bold text-[#133563] bg-sky-100 p-3 rounded-2xl border border-sky-200">
-                        <span class="flex items-center"><i class="fa-regular fa-calendar mr-2 text-[#133563]"></i> <span id="lightbox-date">-</span></span>
-                        <span class="flex items-center"><i class="fa-solid fa-hard-drive mr-2 text-[#133563]"></i> <span id="lightbox-size">-</span></span>
+                <div class="space-y-3 pt-3 border-t-2 border-slate-200">
+                    <div class="flex items-center justify-between text-xs font-bold text-[#133563] bg-sky-100 p-2.5 rounded-xl border border-sky-200">
+                        <span class="flex items-center"><i class="fa-regular fa-calendar mr-1.5 text-[#133563]"></i> <span id="lightbox-date">-</span></span>
+                        <span class="flex items-center"><i class="fa-solid fa-hard-drive mr-1.5 text-[#133563]"></i> <span id="lightbox-size">-</span></span>
                     </div>
                     
                     <div id="lightbox-link-container" class="hidden">
-                        <a id="lightbox-link-btn" href="#" target="_blank" class="w-full py-3.5 bg-[#133563] hover:bg-[#0B203E] text-white text-sm font-black rounded-2xl transition-all shadow-xl flex items-center justify-center space-x-2 border-2 border-white">
-                            <i class="fa-brands fa-google-drive text-lg text-[#DDE86A]"></i>
+                        <a id="lightbox-link-btn" href="#" target="_blank" class="w-full py-3 bg-[#133563] hover:bg-[#0B203E] text-white text-xs sm:text-sm font-black rounded-xl transition-all shadow-xl flex items-center justify-center space-x-2 border-2 border-white">
+                            <i class="fa-brands fa-google-drive text-base text-[#DDE86A]"></i>
                             <span>Buka Folder Google Drive 🚀</span>
                         </a>
                     </div>
 
-                    <button onclick="closeLightbox()" class="w-full py-3 bg-slate-100 hover:bg-slate-200 text-[#133563] text-xs font-extrabold rounded-2xl transition-all">
+                    <button onclick="closeLightbox()" class="w-full py-2.5 bg-slate-100 hover:bg-slate-200 text-[#133563] text-xs font-extrabold rounded-xl transition-all">
                         Tutup Preview
                     </button>
                 </div>
@@ -245,25 +267,25 @@
     </div>
 
     <!-- Footer -->
-    <footer class="border-t-4 border-white bg-[#133563] text-white py-6 mt-12">
-        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4 text-xs font-bold">
+    <footer class="border-t-4 border-white bg-[#133563] text-white py-5 mt-8 sm:mt-12">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-3 text-xs font-bold">
             <p class="text-center md:text-left">
                 🏆 MUDIR CUP 2026 &bull; Pondok Pesantren Al Falah Banjarbaru &bull; BHASMA 47
             </p>
-            <div class="flex flex-wrap justify-center items-center gap-4">
-                <a href="https://facebook.com" target="_blank" class="flex items-center space-x-1.5 bg-white/10 hover:bg-white/20 px-3 py-1.5 rounded-full transition-all">
+            <div class="flex flex-wrap justify-center items-center gap-2 sm:gap-4 text-[11px] sm:text-xs">
+                <a href="https://facebook.com" target="_blank" class="flex items-center space-x-1 bg-white/10 hover:bg-white/20 px-2.5 py-1 rounded-full transition-all">
                     <i class="fa-brands fa-facebook text-blue-400"></i>
                     <span>Pon-Pes Al Falah Banjarbaru</span>
                 </a>
-                <a href="https://youtube.com" target="_blank" class="flex items-center space-x-1.5 bg-white/10 hover:bg-white/20 px-3 py-1.5 rounded-full transition-all">
+                <a href="https://youtube.com" target="_blank" class="flex items-center space-x-1 bg-white/10 hover:bg-white/20 px-2.5 py-1 rounded-full transition-all">
                     <i class="fa-brands fa-youtube text-red-500"></i>
                     <span>Al Falah Banjarbaru TV</span>
                 </a>
-                <a href="https://instagram.com" target="_blank" class="flex items-center space-x-1.5 bg-white/10 hover:bg-white/20 px-3 py-1.5 rounded-full transition-all">
+                <a href="https://instagram.com" target="_blank" class="flex items-center space-x-1 bg-white/10 hover:bg-white/20 px-2.5 py-1 rounded-full transition-all">
                     <i class="fa-brands fa-instagram text-pink-400"></i>
                     <span>alfalah_banjarbaru</span>
                 </a>
-                <a href="https://tiktok.com" target="_blank" class="flex items-center space-x-1.5 bg-white/10 hover:bg-white/20 px-3 py-1.5 rounded-full transition-all">
+                <a href="https://tiktok.com" target="_blank" class="flex items-center space-x-1 bg-white/10 hover:bg-white/20 px-2.5 py-1 rounded-full transition-all">
                     <i class="fa-brands fa-tiktok text-slate-200"></i>
                     <span>alfalah_banjarbarutv</span>
                 </a>
@@ -272,7 +294,8 @@
     </footer>
 
     <script>
-        const participantLogos = Array.from({ length: 38 }, (_, i) => ({
+        // 40 Logo Peserta Lomba
+        const participantLogos = Array.from({ length: 40 }, (_, i) => ({
             name: `Peserta ${i + 1}`,
             logo: `logo${i + 1}.png`
         }));
@@ -355,7 +378,7 @@
                 img.src = p.logo;
                 img.alt = p.name;
                 img.title = p.name;
-                img.className = "w-9 h-9 sm:w-11 sm:h-11 object-contain bg-white rounded-full p-1 border-2 border-[#133563] shadow-md hover:scale-110 transition-transform cursor-pointer";
+                img.className = "w-8 h-8 sm:w-11 sm:h-11 object-contain bg-white rounded-full p-1 border-2 border-[#133563] shadow-md hover:scale-110 transition-transform cursor-pointer";
                 img.onerror = function() {
                     this.onerror = null;
                     this.src = `https://placehold.co/100x100/133563/DDE86A?text=${idx+1}`;
@@ -370,10 +393,10 @@
 
             sponsorLogos.forEach(s => {
                 const box = document.createElement('div');
-                box.className = "flex items-center space-x-2 bg-slate-50 border border-slate-200 px-3 py-1.5 rounded-xl shadow-sm";
+                box.className = "flex items-center space-x-1.5 bg-slate-50 border border-slate-200 px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-xl shadow-sm";
                 box.innerHTML = `
-                    <img src="${s.logo}" alt="${s.name}" onerror="this.onerror=null; this.src='https://placehold.co/120x60/133563/ffffff?text=${encodeURIComponent(s.name)}';" class="h-8 w-auto object-contain">
-                    <span class="text-xs font-black text-[#133563] hidden sm:inline">${s.text}</span>
+                    <img src="${s.logo}" alt="${s.name}" onerror="this.onerror=null; this.src='https://placehold.co/120x60/133563/ffffff?text=${encodeURIComponent(s.name)}';" class="h-6 sm:h-8 w-auto object-contain">
+                    <span class="text-[10px] sm:text-xs font-black text-[#133563] hidden sm:inline">${s.text}</span>
                 `;
                 container.appendChild(box);
             });
@@ -401,10 +424,10 @@
                     <div class="relative aspect-video w-full overflow-hidden bg-[#0B203E]">
                         <img src="${item.url}" alt="${item.title}" 
                              onerror="this.src='https://placehold.co/600x400/133563/DDE86A?text=MUDIR+CUP+2026'"
-                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-90 group-hover:opacity-100">
-                        <div class="absolute top-3 left-3">
-                            <span class="px-3 py-1 rounded-full bg-[#133563] text-[10px] font-black text-[#DDE86A] border border-white shadow-md flex items-center space-x-1 uppercase tracking-wider">
-                                <i class="fa-solid fa-trophy text-xs"></i>
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-95 group-hover:opacity-100">
+                        <div class="absolute top-2.5 left-2.5">
+                            <span class="px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full bg-[#133563] text-[9px] sm:text-[10px] font-black text-[#DDE86A] border border-white shadow-md flex items-center space-x-1 uppercase tracking-wider">
+                                <i class="fa-solid fa-trophy text-[10px]"></i>
                                 <span>${item.category}</span>
                             </span>
                         </div>
@@ -414,15 +437,15 @@
                 card.innerHTML = `
                     <div>
                         ${previewContent}
-                        <div class="p-5">
-                            <h3 class="font-sport font-black text-base text-[#133563] mb-2 line-clamp-1 group-hover:text-blue-600 transition-colors">${item.title}</h3>
-                            <div class="flex items-center justify-between text-xs font-bold text-slate-500">
-                                <span class="flex items-center"><i class="fa-regular fa-calendar mr-1.5 text-[#133563]"></i> ${item.date}</span>
-                                <span class="flex items-center"><i class="fa-solid fa-hard-drive mr-1.5 text-[#133563]"></i> ${item.size}</span>
+                        <div class="p-4 sm:p-5">
+                            <h3 class="font-sport font-black text-sm sm:text-base text-[#133563] mb-1.5 line-clamp-1 group-hover:text-blue-600 transition-colors">${item.title}</h3>
+                            <div class="flex items-center justify-between text-[11px] sm:text-xs font-bold text-slate-500">
+                                <span class="flex items-center"><i class="fa-regular fa-calendar mr-1 text-[#133563]"></i> ${item.date}</span>
+                                <span class="flex items-center"><i class="fa-solid fa-hard-drive mr-1 text-[#133563]"></i> ${item.size}</span>
                             </div>
                         </div>
                     </div>
-                    <div class="px-5 pb-5 pt-1">
+                    <div class="px-4 sm:px-5 pb-4 sm:pb-5 pt-1">
                         <button onclick='openLightbox(${JSON.stringify(item)})' class="w-full py-2.5 bg-[#133563] hover:bg-[#0B203E] text-white text-xs font-black rounded-2xl transition-all flex items-center justify-center space-x-2 shadow-md">
                             <i class="fa-solid fa-folder-open text-[#DDE86A]"></i>
                             <span>Buka Link Drive & Preview</span>
@@ -440,9 +463,9 @@
             
             buttons.forEach(btn => {
                 if (btn.textContent.includes(category) || (category === 'Semua' && btn.textContent.includes('Semua'))) {
-                    btn.className = 'filter-btn active px-4 py-2.5 rounded-2xl text-xs font-black transition-all bg-[#133563] text-white border-2 border-white shadow-md scale-105 flex items-center space-x-1.5';
+                    btn.className = 'filter-btn active px-3.5 py-2 rounded-xl text-xs font-black transition-all bg-[#133563] text-white border-2 border-white shadow-md scale-105 flex items-center space-x-1.5';
                 } else {
-                    btn.className = 'filter-btn px-4 py-2.5 rounded-2xl text-xs font-black transition-all bg-white text-[#133563] border-2 border-[#133563] shadow-sm flex items-center space-x-1.5';
+                    btn.className = 'filter-btn px-3.5 py-2 rounded-xl text-xs font-black transition-all bg-white text-[#133563] border-2 border-[#133563] shadow-sm flex items-center space-x-1.5';
                 }
             });
 
